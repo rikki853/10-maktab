@@ -1,185 +1,391 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="10 Maktab - Modern educational center for quality learning and personal growth."
-    />
-    <title>10 Maktab - Modern Education</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <div class="brand">
-          <span class="brand-mark">10</span>
-          <span class="brand-text">Maktab</span>
-        </div>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#programs">Programs</a>
-          <a href="#why-us">Why Us</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-            <span class="lang-text">O'z</span>
-          </button>
-          <a class="button button-small" href="#contact">Enroll Now</a>
-        </div>
-      </div>
-    </header>
+* {
+  box-sizing: border-box;
+}
 
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Modern Education</p>
-            <h1 data-en="Build a brighter future with 10 Maktab." data-uz="10 Maktab bilan ko'proq to'g'ri kelajakni quraylik.">Build a brighter future with 10 Maktab.</h1>
-            <p class="lead" data-en="We help students grow with quality learning, strong values, and a supportive environment that inspires success." data-uz="Biz o'quvchilarning yuqori sifatli ta'lim, kuchli qadriyatlar va muvaffaqiyatga ilhomlantiruvchi muhitda o'sishiga yordam beramiz.">
-              We help students grow with quality learning, strong values, and a
-              supportive environment that inspires success.
-            </p>
-            <div class="hero-actions">
-              <a class="button" href="#programs" data-en="Explore Programs" data-uz="Dasturlarni o'rganish">Explore Programs</a>
-              <a class="button button-secondary" href="#about" data-en="Learn More" data-uz="Batafsil o'rganish">Learn More</a>
-            </div>
-            <ul class="hero-stats" aria-label="Key highlights">
-              <li><strong>500+</strong><span data-en="Students" data-uz="O'quvchilar">Students</span></li>
-              <li><strong>12+</strong><span data-en="Courses" data-uz="Kurslar">Courses</span></li>
-              <li><strong>98%</strong><span data-en="Satisfaction" data-uz="Rizo">Satisfaction</span></li>
-            </ul>
-          </div>
+:root {
+  --primary: #123d5c;
+  --primary-dark: #0d2d46;
+  --bg: #f7f9fc;
+  --panel: #ffffff;
+  --text: #1d2733;
+  --muted: #5e6d7a;
+  --border: rgba(18, 61, 92, 0.12);
+  --shadow: 0 20px 45px rgba(18, 61, 92, 0.12);
+}
 
-          <div class="hero-card" aria-label="School overview">
-            <div class="card-top">
-              <span class="badge" data-en="Admissions Open" data-uz="Qabul Ochiq">Admissions Open</span>
-            </div>
-            <h2 data-en="Learning for life" data-uz="Hayot uchun o'qish">Learning for life</h2>
-            <div class="mini-stats">
-              <div>
-                <strong data-en="Early" data-uz="Erta">Early</strong>
-                <span data-en="Childhood" data-uz="Bolaliq">Childhood</span>
-              </div>
-              <div>
-                <strong data-en="School" data-uz="Maktab">School</strong>
-                <span data-en="Programs" data-uz="Dasturlar">Programs</span>
-              </div>
-              <div>
-                <strong data-en="Career" data-uz="Karera">Career</strong>
-                <span data-en="Readiness" data-uz="Tayyorligi">Readiness</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+html {
+  scroll-behavior: smooth;
+}
 
-      <section id="about" class="section">
-        <div class="container split">
-          <div>
-            <p class="section-tag" data-en="About Us" data-uz="Biz Haqida">About Us</p>
-            <h2 data-en="Helping students learn with confidence." data-uz="O'quvchilarga ishonch bilan o'qishga yordam berish.">Helping students learn with confidence.</h2>
-          </div>
-          <div>
-            <p data-en="At 10 Maktab, we believe every learner deserves a supportive and inspiring place to grow. Our focus combines academic excellence, creativity, and personal development to prepare students for success in school and beyond." data-uz="10 Maktabda biz har bir o'quvchi qo'llab-quvvatlayuvchi va ilhomlantiruvchi o'sish joyiga loyiq deyemiz. Bizning e'tiborimiz akademik mukammalilik, ijodiylik va shahsiy rivojlanishni birlashtirib, o'quvchilarni maktabdagi va undan tashqari muvaffaqiyatga tayyorlaydi.">
-              At 10 Maktab, we believe every learner deserves a supportive and
-              inspiring place to grow. Our focus combines academic excellence,
-              creativity, and personal development to prepare students for
-              success in school and beyond.
-            </p>
-          </div>
-        </div>
-      </section>
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-      <section id="programs" class="section muted">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-tag" data-en="Programs" data-uz="Dasturlar">Programs</p>
-            <h2 data-en="What we offer" data-uz="Biz nima taklif qilamiz">What we offer</h2>
-          </div>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-          <div class="card-grid">
-            <article class="info-card">
-              <div class="icon">🎓</div>
-              <h3 data-en="Academic Programs" data-uz="Akademik Dasturlar">Academic Programs</h3>
-              <p data-en="Structured classes and strong guidance for core learning." data-uz="Asosiy o'qish uchun tuzilgan sinflar va mustahkam yo'naltirish.">Structured classes and strong guidance for core learning.</p>
-            </article>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-            <article class="info-card">
-              <div class="icon">💡</div>
-              <h3 data-en="Creative Learning" data-uz="Ijodiy O'qish">Creative Learning</h3>
-              <p data-en="Hands-on activities designed to build imagination and curiosity." data-uz="Tasavvur va qiziqishni qurishga mo'ljallangan amaliy faoliyatlar.">Hands-on activities designed to build imagination and curiosity.</p>
-            </article>
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
 
-            <article class="info-card">
-              <div class="icon">🤝</div>
-              <h3 data-en="Personal Growth" data-uz="Shaxsiy Rivojlanish">Personal Growth</h3>
-              <p data-en="Character-building and communication support for confident learners." data-uz="Xarakter qurilishi va ishonchli o'quvchilar uchun muloqot qo'llab-quvvatlashi.">Character-building and communication support for confident learners.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(247, 249, 252, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
 
-      <section id="why-us" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-tag" data-en="Why 10 Maktab" data-uz="Nima Uchun 10 Maktab">Why 10 Maktab</p>
-            <h2 data-en="Education that makes a difference" data-uz="Farq yaratadigan ta'lim">Education that makes a difference</h2>
-          </div>
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 1rem;
+}
 
-          <div class="feature-list">
-            <div>
-              <strong data-en="Experienced mentors" data-uz="Tajribali murabbiylar">Experienced mentors</strong>
-              <p data-en="Passionate educators who understand how students learn best." data-uz="O'quvchilar qanday yaxshi o'rganishini tushunuvchi amaliy o'qituvchilar.">Passionate educators who understand how students learn best.</p>
-            </div>
-            <div>
-              <strong data-en="Balanced curriculum" data-uz="Muvozanatli O'quv Rejasi">Balanced curriculum</strong>
-              <p data-en="Academic excellence supported by creativity, teamwork, and discipline." data-uz="Ijodiylik, jamoaviy ish va intizom bilan qo'llaniladigan akademik mukammalilik.">Academic excellence supported by creativity, teamwork, and discipline.</p>
-            </div>
-            <div>
-              <strong data-en="Safe learning space" data-uz="Xavfsiz O'qish Joyı">Safe learning space</strong>
-              <p data-en="A welcoming and secure environment that encourages confidence." data-uz="Ishonchni rg'ovlatuvchi yurak ochiq va xavfsiz muhit.">A welcoming and secure environment that encourages confidence.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
 
-    <footer id="contact" class="site-footer">
-      <div class="container footer-wrap">
-        <div class="footer-left">
-          <div class="brand footer-brand">
-            <span class="brand-mark">10</span>
-            <span class="brand-text">Maktab</span>
-          </div>
-          <p data-en="Empowering learners for a brighter tomorrow." data-uz="Bugungi o'quvchilarning o'zini yetaklantirish uchun.">Empowering learners for a brighter tomorrow.</p>
-        </div>
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--primary), #1e5d88);
+  color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
 
-        <div class="contact-box">
-          <h3 data-en="Contact Us" data-uz="Biz bilan bog'lanish">Contact Us</h3>
-          <form id="contactForm" class="contact-form">
-            <input 
-              type="email" 
-              placeholder="your@email.com" 
-              required 
-              aria-label="Email address"
-            />
-            <button type="submit" class="button" data-en="Send" data-uz="Yuborish">Send</button>
-          </form>
-          <p>📧 hello@10maktab.com</p>
-          <p>📞 +998 (70) 123-45-67</p>
-        </div>
-      </div>
-    </footer>
+.brand-text {
+  font-size: 1.2rem;
+}
 
-    <script src="script.js"></script>
-  </body>
-</html>
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  transition: 0.2s ease;
+  box-shadow: 0 12px 28px rgba(18, 61, 92, 0.2);
+}
+
+.button:hover {
+  background: var(--primary-dark);
+}
+
+.button-small {
+  padding: 0.7rem 1rem;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.button-secondary:hover {
+  background: rgba(18, 61, 92, 0.04);
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow,
+.section-tag {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(18, 61, 92, 0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.split h2 {
+  margin: 0 0 1rem;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+  color: var(--text);
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.lead {
+  max-width: 620px;
+  margin: 0 0 1.6rem;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-stats {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 110px;
+}
+
+.hero-stats strong {
+  font-size: 1.6rem;
+  letter-spacing: -0.06em;
+}
+
+.hero-stats span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-card {
+  background: linear-gradient(180deg, #fff 0%, #edf5ff 100%);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.card-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(244, 185, 66, 0.18);
+  color: #8f6300;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-card h2 {
+  margin: 2rem 0 1.4rem;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mini-stats div {
+  background: rgba(18, 61, 92, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem 0.8rem;
+  text-align: center;
+}
+
+.mini-stats strong,
+.mini-stats span {
+  display: block;
+}
+
+.mini-stats strong {
+  font-size: 1.1rem;
+}
+
+.mini-stats span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.muted {
+  background: #eef4fb;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.split p,
+.info-card p,
+.feature-list p,
+.site-footer p {
+  color: var(--muted);
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.info-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 2rem 1.4rem;
+  box-shadow: 0 8px 18px rgba(18, 61, 92, 0.04);
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: rgba(18, 61, 92, 0.07);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.3rem;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-list div {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.4rem;
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  background: var(--primary-dark);
+  color: white;
+}
+
+.footer-brand {
+  margin-bottom: 0.8rem;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.contact-box {
+  min-width: 220px;
+}
+
+.contact-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .split,
+  .card-grid,
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-wrap {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 540px) {
+  .button,
+  .button-small {
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+}

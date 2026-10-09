@@ -1,103 +1,22 @@
-// Language toggle functionality
-const langToggle = document.getElementById('langToggle');
-let currentLang = localStorage.getItem('language') || 'en';
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links a');
 
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-setLanguage(currentLang);
-
-langToggle.addEventListener('click', () => {
-  currentLang = currentLang === 'en' ? 'uz' : 'en';
-  localStorage.setItem('language', currentLang);
-  setLanguage(currentLang);
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.forEach((item) => item.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
 });
 
-function setLanguage(lang) {
-  const langText = lang === 'en' ? 'O\'z' : 'Eng';
-  langToggle.textContent = langText;
-
-  document.querySelectorAll('[data-en][data-uz]').forEach((element) => {
-    const text = lang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-uz');
-    if (element.tagName === 'INPUT') {
-      element.placeholder = text;
-    } else {
-      element.textContent = text;
-    }
-  });
-}
-
-// Contact form handling
 const contactForm = document.getElementById('contactForm');
-
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = contactForm.querySelector('input[type="email"]').value;
-
     if (email) {
-      const mailtoLink = `mailto:hello@10maktab.com?subject=Contact%20from%2010%20Maktab&body=Email:%20${encodeURIComponent(email)}`;
-      window.location.href = mailtoLink;
-
-      const btn = contactForm.querySelector('button');
-      const originalText = btn.textContent;
-      btn.textContent = currentLang === 'en' ? '✓ Sent!' : '✓ Yuborildi!';
-      btn.style.opacity = '0.7';
-
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.opacity = '1';
-        contactForm.reset();
-      }, 2000);
+      const mailto = `mailto:hello@10maktab.com?subject=Contact%20from%2010%20Maktab&body=${encodeURIComponent(email)}`;
+      window.location.href = mailto;
     }
   });
 }
-
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.section, .info-card, .feature-list div').forEach((el) => {
-  el.classList.add('scroll-animate');
-  observer.observe(el);
-});
-
-// Add active class to nav links based on scroll position
-window.addEventListener('scroll', () => {
-  let current = '';
-  const sections = document.querySelectorAll('section[id]');
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= sectionTop - 200) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  document.querySelectorAll('.nav-links a').forEach((link) => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-});
-
-const style = document.createElement('style');
-style.textContent = `
-  .nav-links a.active {
-    color: var(--primary);
-  }
-  .nav-links a.active::after {
-    width: 100%;
-  }
-`;
-document.head.appendChild(style);
