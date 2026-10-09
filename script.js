@@ -25,6 +25,8 @@
         </div>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#why-us">Why Us</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -47,7 +49,7 @@
               supportive environment that inspires success.
             </p>
             <div class="hero-actions">
-              <a class="button" href="#contact" data-en="Enroll Now" data-uz="Hozir yoziling">Enroll Now</a>
+              <a class="button" href="#programs" data-en="Explore Programs" data-uz="Dasturlarni o'rganish">Explore Programs</a>
               <a class="button button-secondary" href="#about" data-en="Learn More" data-uz="Batafsil o'rganish">Learn More</a>
             </div>
             <ul class="hero-stats" aria-label="Key highlights">
@@ -93,6 +95,59 @@
               creativity, and personal development to prepare students for
               success in school and beyond.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="programs" class="section muted">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-tag" data-en="Programs" data-uz="Dasturlar">Programs</p>
+            <h2 data-en="What we offer" data-uz="Biz nima taklif qilamiz">What we offer</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <div class="icon">🎓</div>
+              <h3 data-en="Academic Programs" data-uz="Akademik Dasturlar">Academic Programs</h3>
+              <p data-en="Structured classes and strong guidance for core learning." data-uz="Asosiy o'qish uchun tuzilgan sinflar va mustahkam yo'naltirish.">Structured classes and strong guidance for core learning.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="icon">💡</div>
+              <h3 data-en="Creative Learning" data-uz="Ijodiy O'qish">Creative Learning</h3>
+              <p data-en="Hands-on activities designed to build imagination and curiosity." data-uz="Tasavvur va qiziqishni qurishga mo'ljallangan amaliy faoliyatlar.">Hands-on activities designed to build imagination and curiosity.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="icon">🤝</div>
+              <h3 data-en="Personal Growth" data-uz="Shaxsiy Rivojlanish">Personal Growth</h3>
+              <p data-en="Character-building and communication support for confident learners." data-uz="Xarakter qurilishi va ishonchli o'quvchilar uchun muloqot qo'llab-quvvatlashi.">Character-building and communication support for confident learners.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-tag" data-en="Why 10 Maktab" data-uz="Nima Uchun 10 Maktab">Why 10 Maktab</p>
+            <h2 data-en="Education that makes a difference" data-uz="Farq yaratadigan ta'lim">Education that makes a difference</h2>
+          </div>
+
+          <div class="feature-list">
+            <div>
+              <strong data-en="Experienced mentors" data-uz="Tajribali murabbiylar">Experienced mentors</strong>
+              <p data-en="Passionate educators who understand how students learn best." data-uz="O'quvchilar qanday yaxshi o'rganishini tushunuvchi amaliy o'qituvchilar.">Passionate educators who understand how students learn best.</p>
+            </div>
+            <div>
+              <strong data-en="Balanced curriculum" data-uz="Muvozanatli O'quv Rejasi">Balanced curriculum</strong>
+              <p data-en="Academic excellence supported by creativity, teamwork, and discipline." data-uz="Ijodiylik, jamoaviy ish va intizom bilan qo'llaniladigan akademik mukammalilik.">Academic excellence supported by creativity, teamwork, and discipline.</p>
+            </div>
+            <div>
+              <strong data-en="Safe learning space" data-uz="Xavfsiz O'qish Joyı">Safe learning space</strong>
+              <p data-en="A welcoming and secure environment that encourages confidence." data-uz="Ishonchni rg'ovlatuvchi yurak ochiq va xavfsiz muhit.">A welcoming and secure environment that encourages confidence.</p>
+            </div>
           </div>
         </div>
       </section>

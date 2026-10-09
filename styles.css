@@ -2,6 +2,11 @@
 const langToggle = document.getElementById('langToggle');
 let currentLang = localStorage.getItem('language') || 'en';
 
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
 setLanguage(currentLang);
 
 langToggle.addEventListener('click', () => {
@@ -26,12 +31,10 @@ function setLanguage(lang) {
 
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
-let isFormSubmit = false;
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    isFormSubmit = true;
     const email = contactForm.querySelector('input[type="email"]').value;
 
     if (email) {
@@ -47,8 +50,54 @@ if (contactForm) {
         btn.textContent = originalText;
         btn.style.opacity = '1';
         contactForm.reset();
-        isFormSubmit = false;
       }, 2000);
     }
   });
 }
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.section, .info-card, .feature-list div').forEach((el) => {
+  el.classList.add('scroll-animate');
+  observer.observe(el);
+});
+
+// Add active class to nav links based on scroll position
+window.addEventListener('scroll', () => {
+  let current = '';
+  const sections = document.querySelectorAll('section[id]');
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+const style = document.createElement('style');
+style.textContent = `
+  .nav-links a.active {
+    color: var(--primary);
+  }
+  .nav-links a.active::after {
+    width: 100%;
+  }
+`;
+document.head.appendChild(style);
